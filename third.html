@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FOOD  GOOD</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+<div style="background-color:Pink"/>
+  <h1>
+  <p style="color:#ff0000;">FOOD  GOOD</p>
+  </h1>
+  
+  <h2>Menu</h2>
+  <table>
+    <tr>
+      <th>ITEM</th>
+      <th>PRICE(Rs)</th>
+      <th>QUANTITY</th>
+    </tr>
+    <tr>
+      <td>Burger</td>
+      <td>150</td>
+      <td><input type="number" id="burger-qty" min="0" max="10"></td>
+    </tr>
+    <tr>
+      <td>Pizza</td>
+      <td>250</td>
+      <td><input type="number" id="pizza-qty" min="0" max="10"></td>
+    </tr>
+    <tr>
+      <td>French Fries</td>
+      <td>170</td>
+      <td><input type="number" id="fries-qty" min="0" max="10"></td>
+    </tr>
+  </table>
+  
+  <h2>ORDER</h2>
+  <p>Total: Rs<span id="total-price"> 0</span></p>
+  
+  <script>
+    // Calculate and update the total price
+    function updateTotal() {
+      var burgerQty = parseInt(document.getElementById("burger-qty").value) || 0;
+      var pizzaQty = parseInt(document.getElementById("pizza-qty").value) || 0;
+      var friesQty = parseInt(document.getElementById("fries-qty").value) || 0;
+      
+      var totalPrice = (burgerQty * 150) + (pizzaQty * 250) + (friesQty * 170);
+      
+      document.getElementById("total-price").innerText = totalPrice;
+    }
+    
+    // Update total price on quantity change
+    document.getElementById("burger-qty").addEventListener("change", updateTotal);
+    document.getElementById("pizza-qty").addEventListener("change", updateTotal);
+    document.getElementById("fries-qty").addEventListener("change", updateTotal);
+   
+ 
+  </script>
+ <a href="four.html">NEXT</a>
+</body>
+</html>
